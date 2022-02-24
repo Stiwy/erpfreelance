@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Customer{% endblock %}
+
+{% block body %}
+    {% include 'customer/_header.html.twig' %}
+    <section class="bg-white m-5 p-5">
+        <h1 class="text-center text-2xl text-gray-500 font-bold">Modifier une fiche client</h1>
+
+        {{ include('customer/_form.html.twig') }}
+    </section>
+{% endblock %}

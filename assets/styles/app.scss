@@ -1,3 +1,58 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+body {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-color-primary {
+  background-color: #2B2A37;
+}
+
+.bg-color-opacity {
+  background-color: #393844;
+}
+
+.color-primary {
+  color: #02C392;
+}
+
+form {
+  .toggle-bg:after {
+    content: '';
+    @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-4 w-4 transition shadow-sm;
+  }
+
+  input:checked + .toggle-bg:after {
+    transform: translateX(100%);
+    @apply border-white;
+  }
+
+  input:checked + .toggle-bg {
+    @apply bg-blue-600 border-blue-600;
+  }
+
+  .form-group {
+    margin: 10px 0;
+  }
+
+  .form-group label, .form-label {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .form-group input, select {
+    display: block;
+    border-bottom: #999999 solid 4px;
+    font-size: 20px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      transition: .8s 0S border-bottom-color ease-in-out;
+      @apply border-blue-600
+    }
+  }
+}

@@ -42,7 +42,7 @@ class Customer
     #[ORM\Column(type: 'string', length: 255)]
     private $country;
 
-    #[ORM\OneToOne(targetEntity: user::class, cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(targetEntity: User::class, cascade: ['persist', 'remove'])]
     private $user_user;
 
     #[ORM\OneToMany(mappedBy: 'customer', targetEntity: Quote::class)]

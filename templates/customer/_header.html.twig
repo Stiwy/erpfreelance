@@ -1,0 +1,12 @@
+<header class="w-full py-3 pl-3 bg-white flex items-center">
+    {{ render(controller( 'App\\Controller\\SearchController::index', { 'entity': 'customer' } )) }}
+
+    {% if customers is defined %}<p id="customer-count" class="mx-3 text-gray-400 font-bold">{% if (customers|length == 1) %} 1 client {% else %} {{ customers|length }} clients {% endif %}</p>{% endif %}
+
+    <div class="bg-red-400 text-white  font-bold px-3 py-1 rounded-3xl mx-1 cursor-pointer">0</div>
+    <div class="bg-yellow-400  font-bold px-3 py-1 rounded-3xl mx-1 cursor-pointer">0</div>
+    <div class="bg-purple-400 text-white  font-bold px-3 py-1 rounded-3xl mx-1 cursor-pointer">0</div>
+    <div class="bg-green-400 text-white  font-bold px-3 py-1 rounded-3xl mx-1 cursor-pointer">0</div>
+
+    <a class="bg-purple-400 text-white font-bold px-2 py-1 rounded-md ml-4" href="{{ path('customer_new') }}"><i class="fa-solid fa-user-plus"></i> Nouveau client</a>
+</header>
